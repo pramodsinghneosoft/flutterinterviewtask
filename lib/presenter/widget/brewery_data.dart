@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterinterviewtask/domain/entities/brewery_model.dart';
 // import 'package:idb_shim/idb_client.dart';
 
+// ignore: must_be_immutable
 class BreweryDataView extends StatefulWidget {
   BreweryModel breweryModel;
   int index;
@@ -12,7 +13,6 @@ class BreweryDataView extends StatefulWidget {
 }
 
 class _BreweryDataViewState extends State<BreweryDataView> {
-  static const String storeName = "records";
   // Database db;
   var txn;
   var store;
