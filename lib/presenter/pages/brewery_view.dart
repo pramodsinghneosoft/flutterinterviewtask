@@ -129,7 +129,6 @@ class _BreweryViewState extends State<BreweryView> {
           brewerList = null;
           brewerList = data;
         });
-        _getBreweries();
       } else {
         _getBreweries();
       }
