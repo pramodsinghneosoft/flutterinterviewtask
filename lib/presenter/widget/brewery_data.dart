@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterinterviewtask/domain/entities/brewery_model.dart';
-import 'package:idb_shim/idb_client.dart';
-import 'package:intl/intl.dart';
+// import 'package:idb_shim/idb_client.dart';
 
 class BreweryDataView extends StatefulWidget {
   BreweryModel breweryModel;
@@ -14,7 +13,7 @@ class BreweryDataView extends StatefulWidget {
 
 class _BreweryDataViewState extends State<BreweryDataView> {
   static const String storeName = "records";
-  Database db;
+  // Database db;
   var txn;
   var store;
   var key;
@@ -213,19 +212,19 @@ class _BreweryDataViewState extends State<BreweryDataView> {
                                     titleVaueTV(widget.breweryModel.longitude)),
                           ],
                         ),
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Row(
-                          children: [
-                            Expanded(flex: 3, child: titleText("Updated At")),
-                            Expanded(child: Text(":")),
-                            Expanded(
-                                flex: 9,
-                                child: titleVaueTV(getDateString(
-                                    widget.breweryModel.updatedAt))),
-                          ],
-                        ),
+                        // SizedBox(
+                        //   height: 12,
+                        // ),
+                        // Row(
+                        //   children: [
+                        //     Expanded(flex: 3, child: titleText("Updated At")),
+                        //     Expanded(child: Text(":")),
+                        //     Expanded(
+                        //         flex: 9,
+                        //         child: titleVaueTV(getDateString(
+                        //             widget.breweryModel.updatedAt))),
+                        //   ],
+                        // ),
                         SizedBox(
                           height: 20,
                         ),
@@ -249,10 +248,4 @@ class _BreweryDataViewState extends State<BreweryDataView> {
         style: TextStyle(
             fontFamily: "Raleway", fontWeight: FontWeight.w300, fontSize: 15),
       );
-
-  String getDateString(String dateString) {
-    var date = DateTime.parse(dateString);
-    var formattedDate = DateFormat("EEE, d MMM").format(date);
-    return formattedDate;
-  }
 }
